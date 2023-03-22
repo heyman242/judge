@@ -1,0 +1,32 @@
+<style>
+
+	body{
+		background-color: #aadcdf;
+        font-family: Courier;
+      color: rgb(0, 0, 0);
+	}
+    
+    .container-fluid {
+      text-align: center;
+}
+
+
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+<div class="topnav">
+  <a href="/">HOME</a> |
+  <a href="/questions">QUESTIONS LIST</a>
+</div>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

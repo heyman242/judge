@@ -1,0 +1,42 @@
+{% extends "master.html" %}
+
+
+{% block content %}
+<div class="container-fluid">
+  <h1><u>{{  myquestions.problem_title }}</u></h1>
+  </div>
+  <p><strong><h2>Problem Statement:</h2></strong></p>
+  <pre><h3>{{ myquestions.problem_description }}</h3></pre>
+
+
+  <h3>Sample Input:</h3>
+  <pre>{{ myquestions.sample_input }}</pre>
+
+  <h3>Sample Output:</h3>
+  <pre>{{ myquestions.sample_output }}</pre>
+
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 ml-5 mr-5 mt-5 mb-5">
+
+        <form action="/home/run" method="post">
+          {% csrf_token %}
+          <div class="form-group row">
+            <div class="col-sm-40 mr-30 ml-30">
+              <label for="comment"><h2>Coding Area</h2></label>
+              <textarea class="form-control" rows="20" cols="70" name="code_area" style="border:1px solid grey; letter-spacing: 1px; font-family: 'Lucida Console'; font-size: 20px; " onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">{{code}}</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-7 ml-3">
+          <button class="btn btn-outline-success float-right" type="submit">Run Your Code </button>
+        </div>
+      </div>
+    </div>
+</div>
+
+  
+{% endblock %}
