@@ -11,6 +11,7 @@ def questions(request):
     }
     return render( request,'all_questions.html',context)
 
+
 def details(request, id):
   myquestions = Questions.objects.get(id=id)
   template = loader.get_template('details.html')
